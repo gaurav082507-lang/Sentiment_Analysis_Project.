@@ -1,6 +1,6 @@
-# Twitter Sentiment Analysis 🐦
+# Sentiment Analysis 💬
 
-A deep learning web app that classifies the sentiment of any tweet or text as **Positive**, **Negative**, **Neutral**, or **Irrelevant**, powered by a character/word-level Bidirectional LSTM model and served through a dark-themed Streamlit interface.
+A deep learning web app that classifies the sentiment of any piece of text as **Positive**, **Negative**, **Neutral**, or **Irrelevant**, powered by a Bidirectional LSTM model and served through a dark-themed Streamlit interface.
 
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-NLP-8b7bf0?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square)
@@ -9,7 +9,7 @@ A deep learning web app that classifies the sentiment of any tweet or text as **
 
 ## 📖 About
 
-This project trains a **Bidirectional LSTM** neural network on the [Twitter Entity Sentiment Analysis](https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis) dataset to automatically detect the sentiment behind a piece of text. The model is wrapped in an interactive, dark-gradient Streamlit UI where users can type in any sentence or tweet and instantly see the predicted sentiment along with a confidence breakdown across all four classes.
+This project trains a **Bidirectional LSTM** neural network to automatically detect the sentiment behind a piece of text. The model is wrapped in an interactive, dark-gradient Streamlit UI where users can type in any sentence and instantly see the predicted sentiment along with a confidence breakdown across all four classes.
 
 ## ✨ Features
 
@@ -39,7 +39,7 @@ Dense (4, Softmax)
 
 - **Loss:** Sparse Categorical Crossentropy
 - **Optimizer:** Adam (lr = 1e-3)
-- **Training data:** ~70,000 labeled tweets
+- **Training data:** ~70,000 labeled text samples
 - **Callback:** Early stopping on validation loss
 
 ## 📂 Project Structure
@@ -47,7 +47,7 @@ Dense (4, Softmax)
 ```
 ├── app.py                      # Streamlit web app
 ├── requirements.txt            # Python dependencies
-├── twitter-sentiment-analysis.ipynb   # Model training notebook
+├── sentiment-analysis.ipynb    # Model training notebook
 ├── sentiment_model.keras       # Trained model (generate via notebook)
 └── README.md
 ```
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 ### 3. Train and export the model
 
-Run through `twitter-sentiment-analysis.ipynb`, then add this line at the end to save the trained model:
+Run through the training notebook, then add this line at the end to save the trained model:
 
 ```python
 model.save("sentiment_model.keras")
@@ -84,13 +84,9 @@ The app will open in your browser at `http://localhost:8501`.
 
 ## 🖥️ Usage
 
-1. Type or paste any tweet / sentence into the text box.
+1. Type or paste any sentence into the text box.
 2. Click **Detect Sentiment**.
 3. View the predicted sentiment along with a confidence score and a full breakdown across all four classes.
-
-## 📊 Dataset
-
-[Twitter Entity Sentiment Analysis](https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis) — a labeled dataset of tweets categorized by sentiment (Positive, Negative, Neutral, Irrelevant), commonly used for entity-level sentiment classification tasks.
 
 ## 🛠️ Tech Stack
 
